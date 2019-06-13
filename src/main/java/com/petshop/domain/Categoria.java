@@ -11,8 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Categoria implements Serializable{
-
+public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -23,11 +22,11 @@ public class Categoria implements Serializable{
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>();
 	
-	
 	public Categoria() {
 	}
 
 	public Categoria(Integer id, String nome) {
+		super();
 		this.id = id;
 		this.nome = nome;
 	}
@@ -55,8 +54,7 @@ public class Categoria implements Serializable{
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -82,14 +80,4 @@ public class Categoria implements Serializable{
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Categoria [id=" + id + ", nome=" + nome + "]";
-	}
-
-
-	
-	
-	
-	
 }
